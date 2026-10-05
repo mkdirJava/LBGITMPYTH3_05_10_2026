@@ -1,0 +1,12 @@
+>>>>>> def calculate_fees(balance, withdrawals):
+    4:     fee = 0
+       
+           # £1 fee per withdrawal after 3 free ones
+    4:     if withdrawals > 3:
+    2:         fee = (withdrawals - 3) * 1
+       
+           # Overdraft fee
+    4:     if balance < 0:
+    2:         fee += 10
+       
+    4:     return fee

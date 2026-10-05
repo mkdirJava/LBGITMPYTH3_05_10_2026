@@ -1,0 +1,13 @@
+import json
+
+accounts = {"ACC45678": {
+              "account_holder": "Alice Johnson",
+              "balance": 2540.75},
+            "ACC45679":{
+              "account_holder": "Sadia Saleem",
+              "balance": 342.76}
+}
+
+fo = open('accounts2.json', 'w')
+json.dump(accounts, fo)
+fo.close()

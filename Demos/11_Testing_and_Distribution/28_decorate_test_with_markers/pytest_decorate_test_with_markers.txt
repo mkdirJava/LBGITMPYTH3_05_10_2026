@@ -1,0 +1,12 @@
+pytest -v test_bank_utils.py
+
+
+# Run only fast tests:
+pytest -v test_bank_utils.py -m fast
+
+# Run only error tests:
+pytest -v test_bank_utils.py -m error
+
+# Exclude slow tests:
+pytest -v test_bank_utils.py -m "not slow"
+

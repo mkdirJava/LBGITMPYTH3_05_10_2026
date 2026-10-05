@@ -1,0 +1,35 @@
+{
+    "account_holder": "Alice Johnson",
+    "date_of_birth": "1992-03-15",
+    "account_number": "12345678",
+    "sort_code": "20-00-00",
+    "account_type": "current",
+    "balance": 2540.75,
+    "overdraft_limit": 500.00,
+    "is_frozen": false,
+    "address": {
+        "street": "123 High Street",
+        "city": "London",
+        "postcode": "EC1A 1BB"
+    },
+    "transactions": [
+        {
+            "date": "2026-05-01",
+            "description": "Salary",
+            "amount": 3200.00,
+            "type": "credit"
+        },
+        {
+            "date": "2026-05-03",
+            "description": "Electric Bill",
+            "amount": -84.50,
+            "type": "debit"
+        },
+        {
+            "date": "2026-05-07",
+            "description": "Grocery Shopping",
+            "amount": -56.30,
+            "type": "debit"
+        }
+    ]
+}

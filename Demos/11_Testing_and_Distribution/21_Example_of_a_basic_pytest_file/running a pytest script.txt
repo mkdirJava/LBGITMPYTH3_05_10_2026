@@ -1,0 +1,12 @@
+# run all tests:
+pytest -v banking_logic_tests.py
+
+# Run an isolated test (::):
+pytest -v banking_logic_tests.py::test_deposit_increases_balance
+
+# Run whose name contains a substring (-k) "deposit"":
+pytest -v banking_logic_tests.py -k deposit
+
+# Run tests that are marked with a specific marker tag (-m)
+pytest -v banking_logic_tests.py -m "not deposit"
+

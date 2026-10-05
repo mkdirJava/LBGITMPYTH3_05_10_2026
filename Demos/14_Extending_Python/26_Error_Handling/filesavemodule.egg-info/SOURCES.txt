@@ -1,0 +1,6 @@
+filesavemodule.c
+setup.py
+filesavemodule.egg-info/PKG-INFO
+filesavemodule.egg-info/SOURCES.txt
+filesavemodule.egg-info/dependency_links.txt
+filesavemodule.egg-info/top_level.txt

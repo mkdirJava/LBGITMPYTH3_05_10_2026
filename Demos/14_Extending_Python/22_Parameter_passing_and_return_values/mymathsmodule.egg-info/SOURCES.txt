@@ -1,0 +1,6 @@
+mymathsmodule.c
+setup.py
+mymathsmodule.egg-info/PKG-INFO
+mymathsmodule.egg-info/SOURCES.txt
+mymathsmodule.egg-info/dependency_links.txt
+mymathsmodule.egg-info/top_level.txt

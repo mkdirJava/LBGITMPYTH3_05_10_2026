@@ -1,0 +1,1 @@
+python -m trace --count --summary -C . --ignore-dir=C:\Python313 run_tests.py

@@ -1,0 +1,55 @@
+    1: def calc_daily_interest(accounts, days):
+    4:     results = {}
+    4:     if days == 0:
+               days = 1
+       
+    9:     for acc_id, data in accounts.items():
+    5:         balance = data["opening_balance"]
+    5:         rate = data["interest_rate"]
+    5:         transactions_by_day = data["transactions_by_day"]
+       
+   12:         for day in range(days):
+                   # Apply that day's transactions
+   10:             for txn in transactions_by_day.get(day, []):
+    3:                 balance += txn["amount"]
+       
+                   # Inefficient: recompute rolling balance history each day
+    7:             cumulative = 0
+   16:             for past_day in range(day + 1):
+   13:                 for txn in transactions_by_day.get(past_day, []):
+    4:                     cumulative += txn["amount"]
+       
+    7:             interest = (balance + cumulative) * rate / 365
+    7:             balance += interest
+       
+    5:         results[acc_id] = balance
+       
+    4:     return results
+       
+    1: def calc_daily_interest_optimized(accounts, days):
+           results = {}
+           if days == 0:
+               return results
+       
+           for acc_id, data in accounts.items():
+               balance = data["opening_balance"]
+               rate = data["interest_rate"]
+               transactions_by_day = data["transactions_by_day"]
+       
+               cumulative = 0  # Running total of all past transactions
+       
+               for day in range(days):
+                   # Apply today's transactions and update cumulative total once
+                   for txn in transactions_by_day.get(day, []):
+                       amount = txn["amount"]
+                       balance += amount
+                       cumulative += amount
+       
+                   # Now reuse cumulative instead of recomputing it
+                   interest = (balance + cumulative) * rate / 365
+                   balance += interest
+       
+               results[acc_id] = balance
+       
+           return results
+       

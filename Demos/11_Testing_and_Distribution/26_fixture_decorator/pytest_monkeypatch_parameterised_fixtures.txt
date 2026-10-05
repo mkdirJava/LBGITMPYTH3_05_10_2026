@@ -1,0 +1,3 @@
+pytest -v test_bank_utils_using_fixture.py
+
+pytest -v test_bank_utils_using_parameterised_fixture.py

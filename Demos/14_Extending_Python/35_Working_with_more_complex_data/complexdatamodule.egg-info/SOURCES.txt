@@ -1,0 +1,6 @@
+complexdatamodule.c
+setup.py
+complexdatamodule.egg-info/PKG-INFO
+complexdatamodule.egg-info/SOURCES.txt
+complexdatamodule.egg-info/dependency_links.txt
+complexdatamodule.egg-info/top_level.txt

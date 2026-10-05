@@ -1,0 +1,6 @@
+myminimalmodule.c
+setup.py
+myminimalmodule.egg-info/PKG-INFO
+myminimalmodule.egg-info/SOURCES.txt
+myminimalmodule.egg-info/dependency_links.txt
+myminimalmodule.egg-info/top_level.txt

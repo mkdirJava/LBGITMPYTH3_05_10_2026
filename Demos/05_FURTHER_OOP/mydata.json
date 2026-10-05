@@ -1,0 +1,29 @@
+{
+  "customer_id": "CUST1001",
+  "account_type": "Checking",
+  "currency": "GBP",
+  "balance": 1250.75,
+  "transactions": [
+    {
+      "transaction_id": "TXN001",
+      "date": "2026-06-20",
+      "type": "deposit",
+      "amount": 1500.00,
+      "description": "Salary Payment"
+    },
+    {
+      "transaction_id": "TXN002",
+      "date": "2026-06-22",
+      "type": "withdrawal",
+      "amount": 120.50,
+      "description": "Groceries"
+    },
+    {
+      "transaction_id": "TXN003",
+      "date": "2026-06-24",
+      "type": "withdrawal",
+      "amount": 128.75,
+      "description": "Utility Bill"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+Subject: Overdraft Warning
+
+Dear {{ customer_name }},
+
+Your account {{ account_id }} is about to go into overdraft.
+Current balance: £{{ balance }}
+Please ensure sufficient funds are available to avoid fees.
+
+Kind regards,
+Your Bank

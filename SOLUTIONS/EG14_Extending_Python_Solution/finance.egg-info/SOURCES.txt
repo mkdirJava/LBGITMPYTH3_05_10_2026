@@ -1,0 +1,6 @@
+EG14_Solution_finance_module.c
+setup.py
+finance.egg-info/PKG-INFO
+finance.egg-info/SOURCES.txt
+finance.egg-info/dependency_links.txt
+finance.egg-info/top_level.txt

@@ -1,0 +1,4 @@
+trade_id,symbol,quantity,price,currency
+T1,AAPL,100,175.50,USD
+T2,VOD.L,2000,0.98,GBP
+T3,MSFT,50,311.20,USD

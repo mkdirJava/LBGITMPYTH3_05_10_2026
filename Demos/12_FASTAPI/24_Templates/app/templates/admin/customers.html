@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Review</title>
+</head>
+<body>
+
+<h2>Customer Risk Rating</h2>
+
+<table border="1">
+    <tr>
+        <th>Customer</th>
+        <th>Risk Level</th>
+    </tr>
+
+    {% for customer in customers %}
+    <tr>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.risk }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+    1: import unittest
+    1: from bank_utils import calc_daily_interest
+       
+    2: class TestCalcDailyInterest(unittest.TestCase):
+       
+    1:     def setUp(self):
+    4:         self.accounts = {
+    8:             "ACC1": {
+    4:                 "opening_balance": 1000.0,
+    4:                 "interest_rate": 0.0365,  # makes daily interest easy (0.0001)
+    4:                 "transactions_by_day": {
+    4:                     0: [{"amount": 100.0}],
+    4:                     1: [{"amount": -50.0}]
+                       }
+                   }
+               }
+       
+    1:     def test_basic_interest_calculation(self):
+    1:         result = calc_daily_interest(self.accounts, 2)
+    1:         self.assertIn("ACC1", result)
+    1:         self.assertGreater(result["ACC1"], 1000.0)
+       
+    1:     def test_no_transactions(self):
+    1:         accounts = {
+    2:             "ACC2": {
+    1:                 "opening_balance": 1000.0,
+    1:                 "interest_rate": 0.0365,
+    1:                 "transactions_by_day": {}
+                   }
+               }
+    1:         result = calc_daily_interest(accounts, 2)
+    1:         self.assertGreater(result["ACC2"], 1000.0)
+       
+    1:     def test_negative_transactions(self):
+    1:         accounts = {
+    2:             "ACC3": {
+    1:                 "opening_balance": 1000.0,
+    1:                 "interest_rate": 0.0365,
+    1:                 "transactions_by_day": {
+    1:                     0: [{"amount": -200.0}]
+                       }
+                   }
+               }
+    1:         result = calc_daily_interest(accounts, 1)
+    1:         self.assertLess(result["ACC3"], 1000.0)
+       
+    1:     def test_multiple_accounts(self):
+    1:         accounts = {
+    1:             "A": {
+    1:                 "opening_balance": 1000.0,
+    1:                 "interest_rate": 0.03,
+    1:                 "transactions_by_day": {}
+                   },
+    1:             "B": {
+    1:                 "opening_balance": 2000.0,
+    1:                 "interest_rate": 0.03,
+    1:                 "transactions_by_day": {}
+                   }
+               }
+    1:         result = calc_daily_interest(accounts, 1)
+    1:         self.assertEqual(len(result), 2)
+       
+       
+    1: if __name__ == "__main__":
+           unittest.main(argv=['first-arg-is-ignored'], exit=False)

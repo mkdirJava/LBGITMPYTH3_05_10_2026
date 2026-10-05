@@ -1,0 +1,7 @@
+    1: import unittest
+       
+    1: loader = unittest.TestLoader()
+    1: suite = loader.discover(".", pattern="unit_tests_for_bank_utils_calc_daily_interest.py")
+       
+    1: runner = unittest.TextTestRunner(verbosity=2)
+    1: runner.run(suite)

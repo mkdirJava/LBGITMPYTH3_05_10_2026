@@ -1,0 +1,9 @@
+pytest -v using_skip.py
+
+pytest -v using_skipif.py
+
+pytest -v using_xfail_test_ignored.py
+
+pytest -v using_xfail_test_pass.py
+
+

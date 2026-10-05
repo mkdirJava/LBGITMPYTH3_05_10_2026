@@ -1,0 +1,21 @@
+>>>>>> import unittest
+>>>>>> from bank_utils import calculate_fees
+       
+       
+>>>>>> class TestCalculateFees(unittest.TestCase):
+       
+>>>>>>     def test_no_fees(self):
+    1:         self.assertEqual(calculate_fees(100, 2), 0)
+       
+>>>>>>     def test_withdrawal_fees(self):
+    1:         self.assertEqual(calculate_fees(100, 5), 2)
+       
+>>>>>>     def test_overdraft_fee(self):
+    1:         self.assertEqual(calculate_fees(-50, 1), 10)
+       
+>>>>>>     def test_combined_fees(self):
+    1:         self.assertEqual(calculate_fees(-50, 5), 12)
+       
+       
+>>>>>> if __name__ == "__main__":
+>>>>>>     unittest.main(verbosity=2)

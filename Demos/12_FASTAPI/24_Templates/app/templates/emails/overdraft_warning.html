@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Overdraft Warning</h2>
+    <p>Dear {{ customer_name }},</p>
+    <p>
+      Your account <strong>{{ account_id }}</strong> is about to go into overdraft.
+    </p>
+    <p>
+      Current balance: £{{ balance }}
+    </p>
+    <p>
+      Please ensure sufficient funds are available to avoid fees or service disruption.
+    </p>
+    <p>Kind regards,<br/>Your Bank</p>
+  </body>
+</html>

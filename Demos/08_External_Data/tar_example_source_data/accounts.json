@@ -1,0 +1,22 @@
+{
+  "accounts": {
+    "account": [
+      {
+        "account_holder": "Alice Johnson",
+        "account_number": "ACC45678",
+        "sort_code": "20-00-00",
+        "account_type": "current",
+        "balance": 2540.75,
+        "overdraft_limit": 500.00
+      },
+      {
+        "account_holder": "Sadia Saleem",
+        "account_number": "ACC45679",
+        "sort_code": "20-00-00",
+        "account_type": "current",
+        "balance": 342.76,
+        "overdraft_limit": 200.00
+      }
+    ]
+  }
+}

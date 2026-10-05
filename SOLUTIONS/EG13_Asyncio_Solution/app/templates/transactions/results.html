@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Results</title>
+    <style>
+        body { font-family: Arial; }
+        .account { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+<h1>Batch Transaction Results</h1>
+
+{% for result in results %}
+<div class="account">
+    <h3>Account: {{ result.account_number }}</h3>
+
+    {% if result.status_code != 200 %}
+        <p class="error">{{ result.error }}</p>
+    {% else %}
+        <p>Transactions: {{ result.count }}</p>
+        <ul>
+            {% for tx in result.transactions[:3] %}
+                <li>{{ tx }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endfor %}
+
+</body>
+</html>

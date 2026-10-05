@@ -1,0 +1,6 @@
+<!ELEMENT accounts (account)+>
+<!ELEMENT account (account_holder, balance, overdraft_limit)>
+<!ATTLIST account account_id CDATA #REQUIRED>
+<!ELEMENT account_holder (#PCDATA)>
+<!ELEMENT balance (#PCDATA)>
+<!ELEMENT overdraft_limit (#PCDATA)>
