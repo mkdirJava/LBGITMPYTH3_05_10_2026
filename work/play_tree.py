@@ -10,10 +10,14 @@ class Node[str]():
             self.left = incoming_node
             return
     
+        incoming_value = incoming_node.value
         # insertion
-        if self.left.value < incoming_node.value  and self.value < incoming_node.value :
+        if self.left.value < incoming_value  and self.value < incoming_value :
             incoming_node = self.left
             self.left = incoming_node
+            return 
+        if self.value < incoming_value and self.right.value > incoming_value:
+            self.right._update_right(incoming_node)
             return 
         self.left._update_left(incoming_node=incoming_node)
         
@@ -43,12 +47,26 @@ node2 = Node("1")
 node3 = Node("12121")
 node4 = Node("12121123")
 
-node1.add_node(node2)
+node1.add_node(node2)   
 node1.add_node(node3)
 node1.add_node(node4)
 
 # print(node1.left.value)
 print(node1.right.right.value)
 
+class SpecialMixIn():
+    def do_Somthing_2(self):
+        print("hi2")
 
-    
+class SpecialMix2In():
+    def do_Somthing(self):
+        print("hi")
+
+class MyBusinessClass(SpecialMix2In,SpecialMixIn):
+
+    def do_it_now(self):
+        self.do_Somthing()
+        self.do_Somthing_2()
+
+t = MyBusinessClass()
+t.do_it_now()

@@ -1,3 +1,4 @@
+from abc import abstractmethod, ABC
 from typing import NewType, Union, NamedTuple,Generic,TypeVar,List
 
 Tabulus = NewType("Tabulus", int)
@@ -5,9 +6,9 @@ Tabulus_2 = NewType("Tabulus_2", str)
 Accord  = Union[ str , int]
 
 
-class BaseAction():
-    def do_action(self)-> str:
-        pass
+class BaseAction(ABC):
+    @abstractmethod
+    def do_action(self)-> str: ...
 
 class Dog(BaseAction):
     def do_action(self)-> str:
@@ -31,6 +32,7 @@ class ActionUser[T: BaseAction ]():
 actioners: List[BaseAction] = [Dog(),Cat()]
 action_user = ActionUser(actioners=actioners)
 action_user.do_something()
+thing = BaseAction()
 
 
 
