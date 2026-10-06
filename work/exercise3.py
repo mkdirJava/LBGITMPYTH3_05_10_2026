@@ -1,21 +1,21 @@
-from  functools import wraps
+from functools import wraps
 from enum import Enum
-from typing import List, Tuple
+from typing import Callable, List, Tuple
 import re
 
-def _check_sort_code(data: str) :
+def _check_sort_code(data: str) -> None:
     print("Checking sort code...")
     data = data.strip()
     if re.fullmatch(r"\d{2}-\d{2}-\d{2}", data) is None:
         raise ValueError("Invalid sort code!")
 
-def _check_uk_account_number(data: str):
+def _check_uk_account_number(data) -> None:
     print("Checking account number...")
     data = data.strip()
     if re.fullmatch(r"\d{8}", data) is None:
         raise ValueError("Invalid UK account number!")
 
-def _check_payment_card_number(data: str)-> Tuple[bool,str]:
+def _check_payment_card_number(data: str):
     print("Checking card number...")
     data = data.strip()
     if re.fullmatch(r"[45]\d{15}", data) is None:
@@ -26,7 +26,7 @@ class Action(Enum):
     check_uk_account_number = _check_uk_account_number
     check_payment_card_number = _check_payment_card_number
 
-def validate_input(actions: List[Action]):
+def validate_input(actions: List[Action]) -> Callable:
     def decorator(func):
         @wraps(func)
         def wrapper(input:str,*args, **kwargs):
@@ -47,6 +47,11 @@ def validate_input(actions: List[Action]):
 def make_payment(input: str )-> str:
     return input
 
-result = make_payment("00-00-00")
-print(result)
+def main():
+    result = make_payment("00-00-00")
+    print(result)   
+
+if __name__ == "__main__":
+    main()
+
 
