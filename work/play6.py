@@ -25,10 +25,9 @@ class CustomerProfileValidation():
         for attr in dir(self):
             if "validator" in attr and callable(getattr(self,attr)):
                 try:
-                    validator_method = getattr(self,attr)
-                    validator_method()
+                    getattr(self,attr)()
                 except ValueError as e:
-                    error_messages.append(e)
+                    error_messages.append(str(e))
         return error_messages
         
 customer_profile_validator = CustomerProfileValidation("h@gmail.com","1234567890","12345678")
