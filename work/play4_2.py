@@ -18,17 +18,17 @@ class Thing():
 # t.static_method()
 
 
-class Thing_2(Thing):
+# class Thing_2(Thing):
 
-    def __init__(self, age):
-        super().__init__(age)
+#     def __init__(self, age):
+#         super().__init__(age)
 
-    def instance_method(self):
-        print("i am in the child")
+#     def instance_method(self):
+#         print("i am in the child")
 
 
-t = Thing_2(2)
-t.instance_method()
+# t = Thing_2(2)
+# t.instance_method()
 
 
 from collections.abc import Iterable, Iterator
@@ -63,9 +63,6 @@ class BankAccount(Iterable[float]):
     def __iter__(self) -> Iterator[float]:
         return TransactionIterator(self.transactions)
     
-
     # sort collections @total_ordering, plus __eq__ and __lt__ gives sorted()
     # You can also do this with a lambda
     # property looks very interesting 
-
-    
