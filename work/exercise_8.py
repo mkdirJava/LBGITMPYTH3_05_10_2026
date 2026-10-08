@@ -114,5 +114,3 @@ class PostCodeLookUp():
             except Exception as e:
                 raise e
 
-looker = PostCodeLookUp()
-looker.call("BS15 4XX")

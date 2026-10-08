@@ -3,8 +3,9 @@ from work.exercise_8 import PostCodeLookUp
 
 
 
-class PostCodeClientTest(unittest.TestSuite):
+class TestPostCodeClient(unittest.TestCase):
 
-    def test_successful():
+    def test_successful(self):
         unit = PostCodeLookUp()
         unit.call("BS15 4XX")
+ 

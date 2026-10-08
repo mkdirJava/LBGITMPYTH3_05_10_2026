@@ -14,7 +14,6 @@ class Factory:
         else:
             raise ValueError(f"Unknown account type: {account_type}")
 
-
     CLASS_MAP = {
         "currentaccount": "CurrentAccount",
         "isaaccount": "ISAAccount"

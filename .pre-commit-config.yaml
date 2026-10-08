@@ -1,0 +1,5 @@
+repos:
+  - repo: https://github.com
+    rev: v1.1.383  # Use the latest available version tag
+    hooks:
+      - id: pyright
