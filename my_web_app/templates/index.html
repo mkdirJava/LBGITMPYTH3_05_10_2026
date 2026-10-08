@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastAPI App</title>
+    <!-- Linking the static CSS file using Jinja's url_for helper -->
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+
+    <h3>Tech Stack:</h3>
+    <ul>
+        <!-- Looping through the items list passed in context -->
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
