@@ -32,5 +32,22 @@ def call_account(should_auth : bool):
         print(f"Status Code: {response.status_code}")
         print(f"Response Text: {response.text}")
 
-call_account(should_auth=True)
+
+def call_transaction():
+        
+    url = "http://127.0.0.1:8000/transaction?account_number=003"    
+    response = requests.get(url)
+    print(f"Status Code: {response.status_code}")
+    print(f"Response Text: {response.text}")
+
+    url = "http://127.0.0.1:8000/transaction/fileter?account_number=003&transaction_type=DEBIT"    
+    response = requests.get(url)
+    print(f"Status Code: {response.status_code}")
+    print(f"Response Text: {response.text}")
+
+
+
+
+# call_account(should_auth=True)
+call_transaction()
 
