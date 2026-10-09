@@ -40,7 +40,7 @@ def call_transaction():
     print(f"Status Code: {response.status_code}")
     print(f"Response Text: {response.text}")
 
-    url = "http://127.0.0.1:8000/transaction/fileter?account_number=003&transaction_type=DEBIT"    
+    url = "http://127.0.0.1:8000/transaction/filter?account_number=003&transaction_type=DEBIT"    
     response = requests.get(url)
     print(f"Status Code: {response.status_code}")
     print(f"Response Text: {response.text}")
